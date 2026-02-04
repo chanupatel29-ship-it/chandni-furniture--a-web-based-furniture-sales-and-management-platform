@@ -49,7 +49,8 @@
             <span id="modalPrice"></span>
             <div class="modal-buttons">
                 <button class="wishlist">♡ Add to Wishlist</button>
-                <button class="cart">Add to Cart</button>
+                <button class="cart" onclick="addToCart()">Add to Cart</button>
+
             </div>
         </div>
     </div>
@@ -100,16 +101,33 @@ function filterCategory(cat){
     renderProducts(cat);
 }
 
+
+let currentProduct = {};
+
 function openModal(t,d,p,i){
+    currentProduct = {title:t, desc:d, price:p, img:i};
+
     document.getElementById("modalTitle").innerText=t;
     document.getElementById("modalDesc").innerText=d;
     document.getElementById("modalPrice").innerText=p;
     document.getElementById("modalImg").src=i;
     document.getElementById("productModal").style.display="flex";
 }
-function closeModal(){
-    document.getElementById("productModal").style.display="none";
+
+function addToCart(){
+    fetch("add_to_cart.php",{
+        method:"POST",
+        headers:{ "Content-Type":"application/x-www-form-urlencoded" },
+        body:`name=${currentProduct.title}&desc=${currentProduct.desc}&price=${currentProduct.price}&image=${currentProduct.img}`
+    })
+    .then(res=>res.text())
+    .then(data=>{
+        alert("✅ Product added to cart");
+        closeModal();
+    });
 }
+
+
 </script>
 
 <?php include "last.php"; ?>

@@ -8,7 +8,7 @@ if(isset($_POST['login'])){
     // static admin credentials
     if($username == "admin" && $password == "admin123"){
         $_SESSION['admin'] = $username;
-        header("Location: dashboard.php");
+        header("Location: admin_dashboard.php");
         exit();
     }else{
         $error = "Invalid Username or Password";

@@ -8,19 +8,19 @@ if(isset($_GET['action'],$_GET['id'])){
     $id = $_GET['id'];
 
     if($_GET['action']=='approve'){
-        mysqli_query($conn,"UPDATE feedback SET status='approved' WHERE id=$id");
+        mysqli_query($conn,"UPDATE suggestion SET status='approved' WHERE id=$id");
     }
     if($_GET['action']=='reject'){
-        mysqli_query($conn,"UPDATE feedback SET status='rejected' WHERE id=$id");
+        mysqli_query($conn,"UPDATE suggestion SET status='rejected' WHERE id=$id");
     }
-    header("Location: admin_feedback.php");
+    header("Location: admin_suggestion.php");
     exit();
 }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Admin | Feedback</title>
+<title>Admin | Suggestion</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 body{
@@ -72,29 +72,29 @@ tr:nth-child(even){background:#faf7f2;}
 <body>
 
 <div class="container">
-<h2>⭐ Feedback Management</h2>
+<h2>💡 Suggestion Management</h2>
 
 <table>
 <tr>
     <th>ID</th>
     <th>Name</th>
     <th>Email</th>
+    <th>Category</th>
     <th>Message</th>
-    <th>Rating</th>
     <th>Status</th>
     <th>Action</th>
 </tr>
 
 <?php
-$data = mysqli_query($conn,"SELECT * FROM feedback ORDER BY id DESC");
+$data = mysqli_query($conn,"SELECT * FROM suggestion ORDER BY id DESC");
 while($row = mysqli_fetch_assoc($data)){
 ?>
 <tr>
     <td><?= $row['id']; ?></td>
     <td><?= htmlspecialchars($row['name']); ?></td>
     <td><?= htmlspecialchars($row['email']); ?></td>
+    <td><?= htmlspecialchars($row['category']); ?></td>
     <td><?= htmlspecialchars($row['message']); ?></td>
-    <td><?= $row['rating']; ?></td>
     <td><span class="status <?= $row['status']; ?>"><?= ucfirst($row['status']); ?></span></td>
     <td>
         <a href="?action=approve&id=<?= $row['id']; ?>" class="btn approve">Approve</a>
