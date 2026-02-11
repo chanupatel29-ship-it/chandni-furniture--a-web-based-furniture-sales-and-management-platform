@@ -177,6 +177,7 @@ body {
         <a href="inquiries.php">Inquiries</a>
         <a href="profile.php">Profile</a>
         <a href="products.php">Products</a>
+        <a href="cart.php">Cart</a>
         <a href="logout.php" class="logout">Logout</a>
     </nav>
 </header>

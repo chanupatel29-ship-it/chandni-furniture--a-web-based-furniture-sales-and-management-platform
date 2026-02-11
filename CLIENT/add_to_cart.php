@@ -1,21 +1,16 @@
 <?php
-session_start();
 $conn = mysqli_connect("localhost","root","","ck");
 
-if(!$conn){
-    die("DB Error");
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+    $name  = $_POST['name'];
+    $desc  = $_POST['desc'];
+    $price = $_POST['price'];
+    $img   = $_POST['image'];
+
+    $sql = "INSERT INTO cart(product_name,description,price,image)
+            VALUES('$name','$desc','$price','$img')";
+    mysqli_query($conn,$sql);
+
+    echo "added";
 }
-
-$name  = $_POST['name'];
-$desc  = $_POST['desc'];
-$price = $_POST['price'];
-$image = $_POST['image'];
-
-$user = isset($_SESSION['user']) ? $_SESSION['user'] : 'Guest';
-
-$sql = "INSERT INTO cart (product_name, description, price, image, added_by)
-        VALUES ('$name','$desc','$price','$image','$user')";
-
-mysqli_query($conn,$sql);
-echo "success";
 ?>

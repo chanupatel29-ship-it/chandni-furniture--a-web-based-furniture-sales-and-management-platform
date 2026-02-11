@@ -126,6 +126,10 @@ function addToCart(){
         closeModal();
     });
 }
+function closeModal(){
+    document.getElementById("productModal").style.display="none";
+}
+
 
 
 </script>
