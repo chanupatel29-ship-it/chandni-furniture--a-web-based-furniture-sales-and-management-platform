@@ -61,6 +61,7 @@ const products = [
     {title:"Luxury Sofa", desc:"Modern living room sofa", price:"₹25,000", img:"p1.jpg", category:"Sofa"},
     {title:"Green Sofa", desc:"Comfortable green sofa", price:"₹22,000", img:"p2.PNG", category:"Sofa"},
     {title:"Classic Sofa", desc:"Stylish classic sofa", price:"₹20,000", img:"p3.PNG", category:"Sofa"},
+    
 
     {title:"Wood Bed", desc:"Elegant wooden bed", price:"₹35,000", img:"p4.PNG", category:"Bed"},
     {title:"Modern Bed", desc:"Comfortable bed set", price:"₹38,000", img:"p5.PNG", category:"Bed"},

@@ -89,7 +89,7 @@ body{
        We hope to see you again soon!💌</p>
 
     
-    <a href="home.php" class="btn secondary">🏠 Home</a>
+    <a href="index.php" class="btn secondary">🏠 index</a>
 </div>
 
 </body>
