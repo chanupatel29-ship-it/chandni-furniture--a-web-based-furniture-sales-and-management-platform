@@ -364,12 +364,13 @@
         <!-- Quick Links -->
         <div>
             <h3>🔗 Quick Links</h3>
-            <a href="🏠home.php">Home</a>
-            <a href=" 🪑products.php">Products</a>
-            <a href="📝aboutus.php">About Us</a>
-            <a href=" 📞contact.php">Contact</a>
-            <a href="👍feedback.php">feedback</a>
-            <a href="💌suggestion.php">suggestion</a>
+            <a href="home.php">🏠Home</a>
+            <a href=" products.php">🪑Products</a>
+            <a href="aboutus.php">📝About Us</a>
+            <a href=" contact.php">📞Contact</a>
+            <a href="feedback.php">👍feedback</a>
+            <a href="suggestion.php">💌suggestion</a>
+            <a href="cart.php">🛒cart</a>
         </div>
 
         <!-- Contact -->

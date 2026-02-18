@@ -5,6 +5,7 @@
 <title>About Us | Chandni Furniture</title>
 
 <style>
+
 /* ===== Global ===== */
 body{
     margin:0;
@@ -13,16 +14,29 @@ body{
     color:#333;
 }
 
-/* ===== Header ===== */
+/* ===== Header with Logo ===== */
 .header{
     background:linear-gradient(90deg,#6b4f3f,#a67c52);
-    padding:20px;
-    text-align:center;
+    padding:18px 30px;
     color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
 }
+
+.header img{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #d4a373;
+    box-shadow:0 0 10px rgba(0,0,0,0.3);
+}
+
 .header h1{
     margin:0;
-    font-size:36px;
+    font-size:34px;
 }
 
 /* ===== Container ===== */
@@ -67,6 +81,7 @@ body{
     text-align:center;
     transition:0.3s;
 }
+
 .card:hover{
     transform:translateY(-5px);
     box-shadow:0 10px 25px rgba(0,0,0,0.15);
@@ -88,9 +103,10 @@ body{
 
 /* ===== Responsive ===== */
 @media(max-width:600px){
-    .header h1{font-size:28px;}
+    .header h1{font-size:26px;}
     .about-box{padding:25px;}
 }
+
 </style>
 </head>
 
@@ -98,6 +114,7 @@ body{
 
 <!-- ===== Header ===== -->
 <div class="header">
+    <img src="logo1.jpg" alt="logo">
     <h1>About Chandni Furniture</h1>
 </div>
 
